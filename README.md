@@ -87,7 +87,7 @@ waypoint-generator/
 ## How It Works (Logic)
 
 ### Linear Interpolation Formula (2-point method):
-python
+
 x = x1 + t * (x2 - x1)
 y = y1 + t * (y2 - y1)
 
