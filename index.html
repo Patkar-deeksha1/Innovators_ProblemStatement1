@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Graph Plotter</title>
+    </head>
+
+    <body>
+        <h2>Enter the Start, Goal and maximum 2 checkpoints</h2>
+        <form method="post">
+            <p>Start: X <input name="start_x"> Y<input name="start_y"></p>
+            <p>Checkpoint1 (optional): X <input name="cp1_x"> Y<input name="cp1_y"></p>
+            <p>Checkpoint2 (optional): X <input name="cp2_x"> Y<input name="cp2_y"></p> 
+            <p>Goal: X <input name="goal_x"> Y<input name="goal_y"></p>
+            <button type="submit">Generate the Waypoints</button>
+        </form>
+
+        {% if waypoints %}
+        <h3>Generated Waypoints are:</h3>
+        <ul>
+            {% for wp in waypoints %}
+               <li>({{wp}})</li>
+            {% endfor %}   
+        </ul>
+
+        <h3>Graph:</h3>
+        <img src="{{url_for('static', filename='graph.png')}}" alt="waypoint graph">
+        {% endif %}
+       </body>
+</html>
